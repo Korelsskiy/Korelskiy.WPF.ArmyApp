@@ -14,6 +14,10 @@
             <MenuItem Header="Меню">
                 <MenuItem Header="Выйти" Command="{Binding CloseApplicationCommand}"></MenuItem>
             </MenuItem>
+            <MenuItem Header="Страны">
+                <MenuItem Header="{Binding Countries[0].Name}" Command="{Binding GetRussiaPlanes}" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="{Binding Countries[1].Name}" Command="{Binding GetChinaPlanes}" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
@@ -21,19 +25,23 @@
             </StatusBarItem>
         </StatusBar>
         <TabControl>
-            <TabItem Header="Россия">
+            <TabItem Header="{Binding SelectedCountry.Name}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <GroupBox Grid.Column="0" Header="Самолеты">
-                        <ListBox ItemsSource="{Binding Countries[0].Planes}" DisplayMemberPath="Name"/>
+                        <ListBox ItemsSource="{Binding SelectedCountry.Planes}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedPlane}"/>
                     </GroupBox>
                     <GroupBox Grid.Column="1" Header="Информация о самолете">
-                        <DataGrid>
-                            
-                        </DataGrid>
+                        <ScrollViewer>
+                            <StackPanel>
+                                <TextBlock Text="{Binding SelectedPlane.Name}" Background="LightGray" Foreground="Black" FontWeight="Bold" TextAlignment="Center" Margin="0, 20, 0, 0"/>
+                                <Image Source="{Binding SelectedPlane.ImagePath}" Width="400" Height="250"/>
+                                <TextBlock Text="{Binding SelectedPlane.Type}" Background="LightGray" Foreground="Black" FontWeight="Bold" TextAlignment="Center"/>
+                            </StackPanel>
+                        </ScrollViewer>
                     </GroupBox>
                 </Grid>
             </TabItem>
