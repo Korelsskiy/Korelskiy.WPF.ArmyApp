@@ -3,12 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm ="clr-namespace:Korelskiy.WPF.ArmyApp.ViewModels.Base"
+        xmlns:vm ="clr-namespace:Korelskiy.WPF.ArmyApp.ViewModels"
         xmlns:l="clr-namespace:Korelskiy.WPF.ArmyApp"
-        Title="Боевая техника ВС РФ" Height="450" Width="800">
+        Title="{Binding Path=Title}" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            
+            <MenuItem Header="Меню"></MenuItem>
+            <MenuItem Header="Самолет">
+                <MenuItem Header="Су-24"/>
+                <MenuItem Header="МиГ-29"/>
+            </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
@@ -17,10 +24,10 @@
         </StatusBar>
         <TabControl>
             <TabItem Header="Заголовок">
-                <StackPanel HorizontalAlignment ="Center">
-                    <TextBlock Text="Су-24"/>
-                    <Image Height="100" Width="200"/>
-                    <TextBlock Text="Это самолет"/>
+                <StackPanel HorizontalAlignment ="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Су-24" TextAlignment="Center" Background="LightGray" Foreground="Black" FontWeight="Bold" />
+                    <Image Height="270" Width="400" Source="{Binding Path=Src}"/>
+                    <TextBlock Text="Фронтовой бомбардировщик" TextAlignment="Center" Background="LightGray" Foreground="Black" FontWeight="Bold" />
                 </StackPanel>
             </TabItem>
         </TabControl>

@@ -17,3 +17,4 @@ C:\Users\korel\Desktop\Programming\Korelskiy.WPF.ArmyApp\obj\Debug\netcoreapp3.1
 C:\Users\korel\Desktop\Programming\Korelskiy.WPF.ArmyApp\obj\Debug\netcoreapp3.1\Korelskiy.WPF.ArmyApp.dll
 C:\Users\korel\Desktop\Programming\Korelskiy.WPF.ArmyApp\obj\Debug\netcoreapp3.1\Korelskiy.WPF.ArmyApp.pdb
 C:\Users\korel\Desktop\Programming\Korelskiy.WPF.ArmyApp\obj\Debug\netcoreapp3.1\Korelskiy.WPF.ArmyApp.genruntimeconfig.cache
+C:\Users\korel\Desktop\Programming\Korelskiy.WPF.ArmyApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
