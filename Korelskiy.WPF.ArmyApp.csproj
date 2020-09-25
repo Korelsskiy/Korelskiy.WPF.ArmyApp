@@ -8,10 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Data\Images\" />
-    <Folder Include="Infrastructure\Commands\Base\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

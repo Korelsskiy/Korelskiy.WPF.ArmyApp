@@ -1,12 +1,28 @@
 ﻿<Window x:Class="Korelskiy.WPF.ArmyApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Korelskiy.WPF.ArmyApp"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        xmlns:vm ="clr-namespace:Korelskiy.WPF.ArmyApp.ViewModels.Base"
+        xmlns:l="clr-namespace:Korelskiy.WPF.ArmyApp"
+        Title="Боевая техника ВС РФ" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="@Korelskiy2020"/>
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Заголовок">
+                <StackPanel HorizontalAlignment ="Center">
+                    <TextBlock Text="Су-24"/>
+                    <Image Height="100" Width="200"/>
+                    <TextBlock Text="Это самолет"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
