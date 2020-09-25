@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Korelskiy.WPF.ArmyApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace Korelskiy.WPF.ArmyApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowViewModel viewModel = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

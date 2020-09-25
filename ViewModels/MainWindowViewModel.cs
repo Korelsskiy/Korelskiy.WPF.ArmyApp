@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Korelskiy.WPF.ArmyApp.ViewModels
@@ -22,14 +23,14 @@ namespace Korelskiy.WPF.ArmyApp.ViewModels
 
         private void OnChangeAircraftCommandExecuted(object p)
         {
-
+            
         }
 
         private bool CanCloseApplicationCommandExecute(object p) => true;
 
         private void OnCloseApplicationCommandExecuted(object p)
         {
-
+            Application.Current.Shutdown();
         }
         public ObservableCollection<ProducingCountry> Countries { get; }
 
@@ -42,7 +43,7 @@ namespace Korelskiy.WPF.ArmyApp.ViewModels
         #endregion
 
         #region Заголовок
-        private string _Title = "ВВС РФ";
+        private string _Title = "ВВС";
 
 
 
