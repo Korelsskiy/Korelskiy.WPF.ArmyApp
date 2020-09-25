@@ -13,8 +13,9 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Меню"></MenuItem>
             <MenuItem Header="Самолет">
-                <MenuItem Header="Су-24"/>
+                <MenuItem Header="Су-24" Command=""/>
                 <MenuItem Header="МиГ-29"/>
+                <MenuItem Header="Су-27"/>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
@@ -25,6 +26,7 @@
         <TabControl>
             <TabItem Header="Заголовок">
                 <StackPanel HorizontalAlignment ="Center" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Countries[0].Planes[0].Name}"/>
                     <TextBlock Text="Су-24" TextAlignment="Center" Background="LightGray" Foreground="Black" FontWeight="Bold" />
                     <Image Height="270" Width="400" Source="{Binding Path=Src}"/>
                     <TextBlock Text="Фронтовой бомбардировщик" TextAlignment="Center" Background="LightGray" Foreground="Black" FontWeight="Bold" />

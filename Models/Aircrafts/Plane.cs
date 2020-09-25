@@ -9,7 +9,11 @@ namespace Korelskiy.WPF.ArmyApp.Models.Aircrafts
 
         public string Type { get; set; }
 
-        public DateTime FirstFlight { get; set; }
+        public string FirstFlight { get; set; }
+
+        public int InService { get; set; }
+
+        public string ImagePath { get; set; }
     }
 
     internal class ProducingCountry
