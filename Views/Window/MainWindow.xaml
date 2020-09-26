@@ -17,6 +17,8 @@
             <MenuItem Header="Страны">
                 <MenuItem Header="{Binding Countries[0].Name}" Command="{Binding GetRussiaPlanes}" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="{Binding Countries[1].Name}" Command="{Binding GetChinaPlanes}" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="{Binding Countries[2].Name}" Command="{Binding GetUSAPlanes}" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="{Binding Countries[3].Name}" Command="{Binding GetIndiaPlanes}" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
@@ -40,6 +42,15 @@
                                 <TextBlock Text="{Binding SelectedPlane.Name}" Background="LightGray" Foreground="Black" FontWeight="Bold" TextAlignment="Center" Margin="0, 20, 0, 0"/>
                                 <Image Source="{Binding SelectedPlane.ImagePath}" Width="400" Height="250"/>
                                 <TextBlock Text="{Binding SelectedPlane.Type}" Background="LightGray" Foreground="Black" FontWeight="Bold" TextAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Первый полет: "/>
+                                    <Label Content="{Binding SelectedPlane.FirstFlight}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="На вооружении(шт.): "/>
+                                    <Label Content="{Binding SelectedPlane.InService}"/>
+                                </StackPanel>
+                                <TextBlock Text="Информация о самолете" Background="LightGray" Foreground="Black" FontWeight="Bold" TextAlignment="Center"/>
                             </StackPanel>
                         </ScrollViewer>
                     </GroupBox>

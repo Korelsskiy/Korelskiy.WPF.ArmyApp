@@ -13,13 +13,31 @@ namespace Korelskiy.WPF.ArmyApp.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        
-
+        public ICommand GetIndiaPlanes { get; }
+        public ICommand GetUSAPlanes { get; }
         public ICommand GetRussiaPlanes { get;}
 
         public ICommand GetChinaPlanes { get; }
 
         public ICommand CloseApplicationCommand { get; }
+
+        private bool CanGetIndiaPlanesExecute(object p) => true;
+
+        private void OnGetIndiaPlanesExecuted(object p)
+        {
+            SelectedCountry = Countries[3];
+            SelectedPlane = Countries[3].Planes[0];
+
+        }
+
+        private bool CanGetUSAPlanesExecute(object p) => true;
+
+        private void OnGetUSAPlanesExecuted(object p)
+        {
+            SelectedCountry = Countries[2];
+            SelectedPlane = Countries[2].Planes[0];
+
+        }
 
         private bool CanGetRussiaPlanesExecute(object p) => true;
 
@@ -78,6 +96,8 @@ namespace Korelskiy.WPF.ArmyApp.ViewModels
             CloseApplicationCommand = new LyambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             GetRussiaPlanes = new LyambdaCommand(OnGetRussiaPlanesExecuted, CanGetRussiaPlanesExecute);
             GetChinaPlanes = new LyambdaCommand(OnGetChinaPlanesExecuted, CanGetChinaPlanesExecute);
+            GetUSAPlanes = new LyambdaCommand(OnGetUSAPlanesExecuted, CanGetUSAPlanesExecute);
+            GetIndiaPlanes = new LyambdaCommand(OnGetIndiaPlanesExecuted, CanGetIndiaPlanesExecute);
 
             SelectedCountry = Countries[1];
             SelectedPlane = Countries[1].Planes[0];
